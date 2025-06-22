@@ -1,0 +1,358 @@
+/* style.css para a Landing Page */
+
+/* --- GERAL E VARIÁVEIS --- */
+:root {
+    --cor-principal: #1e4620; /* Verde escuro do APEISYS */
+    --cor-fundo: #f4f7f5; /* Um branco levemente acinzentado */
+    --cor-texto: #333333; /* Texto escuro para contraste */
+    --cor-texto-claro: #ffffff;
+    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Reset básico e configuração de fonte */
+body {
+    font-family: var(--fonte-principal);
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    scroll-behavior: smooth; /* Animação de rolagem suave para links internos */
+}
+
+/* --- HERO SECTION E NAVEGAÇÃO --- */
+.hero {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    height: 90vh; /* Ocupa 90% da altura da tela */
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+}
+
+.navbar a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--cor-amarelo-esperado, #ffc107); /* Cor de destaque ao passar o mouse */
+}
+
+.hero-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    max-width: 600px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 500px;
+    margin: 1rem 0 2rem 0;
+}
+
+/* Botão de Chamada para Ação (Call to Action) */
+.btn-cta {
+    background-color: #fff;
+    color: var(--cor-principal);
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-cta:hover {
+    transform: translateY(-3px); /* Efeito de "levantar" */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* --- SEÇÕES DE CONTEÚDO --- */
+.section {
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Seção escura para contraste */
+.section-dark {
+    background-color: #2a2a2a;
+    color: var(--cor-texto-claro);
+}
+
+.solucao-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    text-align: left;
+    margin-top: 3rem;
+}
+
+.mockup-placeholder {
+    flex: 1;
+    background-color: #444;
+    height: 300px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: #888;
+}
+
+.solucao-texto {
+    flex: 1;
+}
+
+.solucao-texto ul {
+    list-style: '✔️ '; /* Adiciona um check antes de cada item */
+    padding-left: 20px;
+}
+
+/* --- SEÇÃO DA EQUIPE --- */
+.subtitulo-equipe {
+    margin-bottom: 3rem;
+}
+.equipe-grid {
+display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    justify-content: center; 
+}
+
+.membro-card {
+    text-align: center;
+}
+
+.membro-card .avatar-equipe {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 auto 1rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: #888;
+    /* Para a imagem real:
+    background-image: url('caminho/para/foto.jpg');
+    background-size: cover;
+    background-position: center;
+    */
+}
+
+.membro-card h4 {
+    margin: 0.5rem 0 0.2rem 0;
+    font-size: 1.1rem;
+}
+
+.membro-card p {
+    margin: 0;
+    color: #666;
+    font-size: 1rem;
+}
+
+/* --- RODAPÉ --- */
+.footer {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: 3rem 5%;
+}
+
+.footer h2 { font-size: 2rem; }
+.footer .btn-cta {
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+}
+.footer-bottom p {
+    font-size: 0.9rem;
+    color: var(--cor-texto-secundario);
+}
+
+/* --- AJUSTES DE RESPONSIVIDADE (PARA CELULARES) --- */
+@media (max-width: 768px) {
+    .hero {
+        height: auto; /* Altura automática em telas pequenas */
+        padding-bottom: 4rem;
+    }
+    .navbar {
+        flex-direction: column; /* Menu fica em coluna */
+        gap: 1rem;
+    }
+    .navbar ul {
+        padding: 0;
+        gap: 1.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .section {
+        padding: 3rem 5%;
+    }
+
+    .solucao-content {
+        flex-direction: column; /* Empilha os itens da solução */
+    }
+}
+
+/* ==========================================================================
+   NOVOS ESTILOS - LANDING PAGE E PÁGINA DE EXPERIÊNCIA
+   ========================================================================== */
+
+/* --- Seção do Protótipo (index.html) --- */
+#prototipo {
+    background-color: #e9ecef; /* Um cinza bem claro para diferenciar */
+    color: var(--cor-texto);
+}
+#prototipo h2 { color: var(--cor-principal); }
+#prototipo p { color: #495057; }
+#prototipo .btn-cta {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+}
+
+/* --- Banner do Seduckathon (index.html) --- */
+.seduckathon-banner {
+    display: block;
+    padding: 4rem 5%;
+    background-color: #333; /* Cor escura para o banner */
+    /* Para usar uma imagem de fundo, descomente a linha abaixo */
+    /* background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('URL_DA_IMAGEM_AQUI'); */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+.seduckathon-banner:hover {
+    transform: scale(1.02); /* Efeito de zoom suave ao passar o mouse */
+}
+.banner-content h3 {
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+}
+.banner-content p {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+
+/* --- Estilos da Página de Experiência (experiencia.html) --- */
+.navbar-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+.navbar-page .logo { color: var(--cor-principal); font-size: 1.8rem; font-weight: bold; }
+.btn-voltar {
+    background-color: var(--cor-principal);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.experience-container {
+    padding: 2rem 5%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.experience-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.experience-header h1 { font-size: 3rem; color: var(--cor-principal); }
+
+.experience-section {
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+.experience-section h2 { font-size: 2rem; color: #333; }
+.experience-section p { color: #555; line-height: 1.7; }
+
+.galeria-fotos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.foto-placeholder {
+    background-color: #ccc;
+    height: 200px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-style: italic;
+}
+
+/* --- Ajustes Finais de Responsividade --- */
+@media (max-width: 768px) {
+    .seduckathon-banner {
+        padding: 3rem 5%;
+    }
+    .banner-content h3 { font-size: 1.5rem; }
+
+    .experience-header h1 { font-size: 2.2rem; }
+    .experience-section h2 { font-size: 1.8rem; }
+}
