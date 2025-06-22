@@ -125,9 +125,15 @@ body {
     align-items: center;
     gap: 3rem;
     text-align: left;
-    margin-top: 3rem;
+    margin-top: 3rem; /* Adiciona um espaço entre as duas subseções */
 }
 
+/* NOVA CLASSE PARA INVERTER O LAYOUT */
+/* Esta regra simplesmente inverte a ordem dos elementos flex,
+   colocando o segundo item (o texto) antes do primeiro (a imagem). */
+.solucao-content-reverse {
+    flex-direction: row-reverse;
+}
 
 /* Removemos a altura fixa para que ele se ajuste ao tamanho da imagem. */
 .mockup-placeholder {
@@ -359,4 +365,14 @@ display: grid;
 
     .experience-header h1 { font-size: 2.2rem; }
     .experience-section h2 { font-size: 1.8rem; }
+    
+     .solucao-content {
+        flex-direction: column; /* Faz os itens ficarem um em cima do outro no celular */
+    }
+
+    /* NOVO: Garante que a versão invertida também fique em coluna no celular */
+    .solucao-content-reverse {
+        flex-direction: column; /* A ordem volta ao normal (imagem em cima, texto embaixo) */
+    }
+
 }
