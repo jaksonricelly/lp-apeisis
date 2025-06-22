@@ -128,16 +128,20 @@ body {
     margin-top: 3rem;
 }
 
+
+/* Removemos a altura fixa para que ele se ajuste ao tamanho da imagem. */
 .mockup-placeholder {
-    flex: 1;
-    background-color: #444;
-    height: 300px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-style: italic;
-    color: #888;
+    flex: 1; /* Faz ele ocupar o espaço disponível no layout */
+}
+
+/* --- Estilo para a IMAGEM dentro do container --- */
+/* Explicação: Esta é a regra mais importante! Ela controla a imagem. */
+.mockup-placeholder img {
+    max-width: 100%;    /* A imagem NUNCA será mais larga que o seu container. Essa é a chave da responsividade. */
+    height: auto;       /* A altura se ajusta automaticamente para manter a proporção da imagem. */
+    border-radius: 8px; /* Mantém as bordas arredondadas. */
+    display: block;     /* Remove qualquer espaço extra que a tag <img> às vezes tem por padrão. */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* Adiciona uma sombra bonita para dar profundidade. */
 }
 
 .solucao-texto {
