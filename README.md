@@ -1,2 +1,2 @@
 # lp-apeisis
-Langing Page - Apesisi
+Langing Page - Apesisis
